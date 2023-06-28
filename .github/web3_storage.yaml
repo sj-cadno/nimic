@@ -1,0 +1,12 @@
+- run: npm run build # e.g output your static site to `./dist`
+
+- uses: web3-storage/add-to-web3@v2
+  id: web3
+  with:
+    web3_token: ${{ secrets.WEB3_STORAGE_TOKEN }}
+    path_to_add: 'dist'
+
+- run: echo ${{ steps.web3.outputs.cid }}
+# "bafkreicysg23kiwv34eg2d7qweipxwosdo2py4ldv42nbauguluen5v6am"
+- run: echo ${{ steps.web3.outputs.url }}
+# "https://dweb.link/ipfs/bafkreicysg23kiwv34eg2d7qweipxwosdo2py4ldv42nbauguluen5v6am"
